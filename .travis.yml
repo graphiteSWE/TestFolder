@@ -53,7 +53,7 @@ install:
   - sudo apt-get install libcppunit-dev
 
 script:
-  - build-wrapper-linux-x86-64 --out-dir bw-output ./travis.sh
+  - build-wrapper-linux-x86-64 --out-dir . ./travis.sh
 
 after_success:
   - cd ${TRAVIS_BUILD_DIR}
@@ -62,7 +62,7 @@ after_success:
   - "sonar-scanner \
     -Dsonar.projectKey=DeSpeectTestByGraphite \
     -Dsonar.sources=DeSpeect/ \
-    -Dsonar.cfamily.build-wrapper-output=bw-output \
+    -Dsonar.cfamily.build-wrapper-output=. \
     -Dsonar.host.url=https://sonarcloud.io \
     -Dsonar.organization=graphiteswe-github \
     -Dsonar.login=8b51b6fb3d84c5b90bd692bcdee2005f3bc81bc6 \
