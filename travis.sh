@@ -16,7 +16,7 @@ rm -rf build
 mkdir build
 mkdir build/Test
 
-cp -r ../SpeectInstaller/voices/cmu_arctic_slt ./build/Test
+cp -r ./SpeectInstaller/voices/cmu_arctic_slt ./build/Test
 cd build
 cmake ../DeSpeect -DENABLE_COVERAGE=On || exit 1
 make || exit 2
