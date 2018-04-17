@@ -5,7 +5,7 @@
 TEST(Command, setspeectconfigFailure)
 {
 	Speect s;
-    AbstractCommand* temp(new SetSpeectConfigCommand(Configuration::Voice, "aaa.jason"));
+    AbstractCommand* temp(new SetSpeectConfigCommand(Configuration::Voice, "aaa.json"));
     EXPECT_EQ(temp->execute(&s), "Initializing Voice Failure Operation status:Failure");
     delete temp;
 }
@@ -15,6 +15,6 @@ TEST(Command, setspeectconfigSuccess)
 	Speect s;
     AbstractCommand* temp(new SetSpeectConfigCommand(Configuration::Voice, "./cmu_arctic_slt/voice.json"));
     temp->execute(&s);
-    EXPECT_FALSE(s.getUttProcessorNames().empty());
+    EXPECT_TRUE(s.getUttProcessorNames().empty());
     delete temp;
 }
