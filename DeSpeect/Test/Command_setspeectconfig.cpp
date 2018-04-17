@@ -15,6 +15,6 @@ TEST(Command, setspeectconfigSuccess)
 	Speect s;
     AbstractCommand* temp(new SetSpeectConfigCommand(Configuration::Voice, "./cmu_arctic_slt/voice.json"));
     temp->execute(&s);
-    EXPECT_TRUE(s.getUttProcessorNames().empty());
+    EXPECT_FALSE(s.getUttProcessorNames().empty());
     delete temp;
 }
