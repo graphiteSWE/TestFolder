@@ -13,7 +13,7 @@ TEST(Command, setspeectconfigFailure)
 TEST(Command, setspeectconfigSuccess)
 {
 	Speect s;
-    AbstractCommand* temp(new SetSpeectConfigCommand(Configuration::Voice, "./../../../SpeectInstaller/voices/cmu_arctic_slt/voice.json"));
+    AbstractCommand* temp(new SetSpeectConfigCommand(Configuration::Voice, "./cmu_arctic_slt/voice.json"));
     temp->execute(&s);
     EXPECT_FALSE(s.getUttProcessorNames().empty());
     delete temp;
