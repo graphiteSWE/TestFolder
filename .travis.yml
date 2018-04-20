@@ -60,7 +60,7 @@ after_success:
   - ./get_code_cov.sh
   - bash <(curl -s https://codecov.io/bash)
   - "sonar-scanner \
-    -Dsonar.projectKey=DeSpeectTestByGraphite \
+    -Dsonar.projectKey=DeSpeectTest \
     -Dsonar.sources=DeSpeect/ \
     -Dsonar.cfamily.build-wrapper-output=. \
     -Dsonar.host.url=https://sonarcloud.io \
