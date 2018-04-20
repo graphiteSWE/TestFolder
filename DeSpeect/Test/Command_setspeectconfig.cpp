@@ -18,3 +18,19 @@ TEST(Command, setspeectconfigSuccess)
     EXPECT_FALSE(s.getUttProcessorNames().empty());
     delete temp;
 }
+TEST(Command, setspeectconfigSuccess)
+{
+	Speect s;
+    AbstractCommand* temp(new SetSpeectConfigCommand(Configuration::Voice, "./meraka_lwazi2_alta/voice.json"));
+    temp->execute(&s);
+    EXPECT_FALSE(s.getUttProcessorNames().empty());
+    delete temp;
+}
+TEST(Command, setspeectconfigSuccess)
+{
+	Speect s;
+    AbstractCommand* temp(new SetSpeectConfigCommand(Configuration::Voice, "./meraka_lwazi2_john/voice.json"));
+    temp->execute(&s);
+    EXPECT_FALSE(s.getUttProcessorNames().empty());
+    delete temp;
+}
