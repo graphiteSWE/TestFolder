@@ -1,8 +1,10 @@
 #include "gtest/gtest.h"
 #include "setspeectconfigcommand.h"
 #include "../Model/Command/header/commandlist.h"
+#include "../Model/SpeectWrapper/header/relation.h"
 
-TEST(View, VerifyRelationTest){
+
+TEST(Graph, VerifyRelationName){
     Speect* s=new Speect();
     CommandList::CommandBuilder* builder=new CommandList::CommandBuilder(s);
     CommandList* commands;

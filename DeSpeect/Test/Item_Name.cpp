@@ -3,7 +3,7 @@
 #include "../Model/Command/header/commandlist.h"
 #include "../Model/SpeectWrapper/header/relation.h"
 
-TEST(View, VerifyRelationTest_II){
+TEST(Graph, VerifyItemName){
     Speect* s=new Speect();
     CommandList::CommandBuilder* builder=new CommandList::CommandBuilder(s);
     CommandList* commands;
