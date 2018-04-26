@@ -19,4 +19,5 @@ TEST(Graph, VerifyItemName){
     EXPECT_EQ(commands->getRelation("Token")->getRelationHead().next().getName(), "everybody");
     delete s;
     delete commands;
+    delete builder;
 }
