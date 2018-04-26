@@ -18,4 +18,5 @@ TEST(View, VerifyRelationTest){
     EXPECT_EQ(commands->getRelationNames().front(), "Token");
     delete s;
     delete commands;
+    delete builder;
 }
