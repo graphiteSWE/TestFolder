@@ -29,6 +29,7 @@ add_test(
 add_executable(
 	Test2
 	Command_setspeectconfig.cpp
+	View_Test.cpp
 )
 
 target_link_libraries(
