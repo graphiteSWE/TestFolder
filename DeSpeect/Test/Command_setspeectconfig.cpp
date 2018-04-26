@@ -2,6 +2,7 @@
 #include "../Model/Command/header/setspeectconfigcommand.h"
 #include "../Model/SpeectWrapper/header/Speect.h"
 #include "../Model/Command/header/createaudiocommand.h"
+#include "../Model/Command/header/commandlist.h"
 
 TEST(Command, setspeectconfigFailure)
 {
@@ -30,6 +31,25 @@ TEST(Command, setspeectconfigutterancetest)
     EXPECT_EQ(temp->execute(&s), " Initializing Utterance Success Operation status:No error");
     delete temp;
 }
+
+/*TEST(View, VerifyRelationTest){
+    Speect* s=new Speect();
+    CommandList::CommandBuilder* builder=new CommandList::CommandBuilder(s);
+    CommandList* commands;
+    commands=builder->LoadConfig(Configuration::Voice, "./cmu_arctic_slt/voice.json").getCommandList();
+    //commands->executeAll();
+    std::string text="hi everybody";
+    commands=builder->LoadConfig(Configuration::UtteranceText, text).getCommandList();
+    //commands->executeAll();
+    std::list<std::string> processorList;
+    processorList.push_back("Tokenize");
+    commands=builder->WithProcessors(processorList).getCommandList();
+    commands->executeAll();
+    EXPECT_EQ(commands->getRelationNames().front(), "Tokenize");
+    delete s;
+    delete commands;
+}
+*/
 
 /*
 TEST(Command, tryCreateAudioFail2)

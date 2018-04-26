@@ -61,4 +61,40 @@ add_test(
         Item_Name
     )
 ########################################################################
+add_executable(
+    LoadPlugin
+    Command_loadplugin.cpp
+    )
 
+target_link_libraries(
+    LoadPlugin
+    gtest_main
+    Command
+    SpeectWrapper
+    ${despeect}
+    )
+add_test(
+    NAME
+        LoadPlugin
+    COMMAND
+        LoadPlugin
+    )
+########################################################################
+add_executable(
+    Utterance_Name
+    Utterance_Name.cpp
+    )
+
+target_link_libraries(
+    Utterance_Name
+    gtest_main
+    Command
+    SpeectWrapper
+    ${despeect}
+    )
+add_test(
+    NAME
+        Utterance_Name
+    COMMAND
+        Utterance_Name
+    )

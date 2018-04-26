@@ -2,8 +2,9 @@
 #include "setspeectconfigcommand.h"
 #include "../Model/Command/header/commandlist.h"
 #include "../Model/SpeectWrapper/header/relation.h"
+#include "../Model/Command/header/uttprocessorcommand.h"
 
-TEST(Graph, VerifyItemName){
+TEST(Graph, VerifyUtteranceName){
     Speect* s=new Speect();
     CommandList::CommandBuilder* builder=new CommandList::CommandBuilder(s);
     CommandList* commands;
@@ -16,7 +17,8 @@ TEST(Graph, VerifyItemName){
     processorList.push_back("Tokenize");
     commands=builder->WithProcessors(processorList).getCommandList();
     commands->executeAll();
-    EXPECT_EQ(commands->getRelation("Token")->getRelationHead().next().getName(), "everybody");
+    EXPECT_EQ(commands->getUttProcessorsNames().front(), "Tokenize");
     delete s;
     delete commands;
+    delete builder;
 }
