@@ -29,7 +29,8 @@ add_test(
 add_executable(
 	Test2
 	Command_setspeectconfig.cpp
-	View_Test.cpp
+	Item_Name.cpp
+	Relation_Name.cpp
 )
 
 target_link_libraries(
